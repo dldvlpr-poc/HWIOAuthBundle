@@ -1,0 +1,7 @@
+hwi_oauth:
+    resource_owners:
+        github:
+            type:                github
+            client_id:           '%env(CLIENT_ID)%'
+            client_secret:       '%env(CLIENT_SECRET)%'
+            scope:               'user:email,public_repo'
