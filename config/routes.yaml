@@ -3,3 +3,12 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+
+connect_github_start:
+    path: /connect/github
+    controller: App\Controller\GitHubController::connectAction
+
+connect_github_check:
+    path: /connect/github/check
+    controller: App\Controller\GitHubController::connectCheckAction

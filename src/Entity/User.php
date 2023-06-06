@@ -30,6 +30,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $githubId = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $githubAccessToken = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -108,6 +111,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setGithubId(?string $githubId): self
     {
         $this->githubId = $githubId;
+
+        return $this;
+    }
+
+    public function getGithubAccessToken(): ?string
+    {
+        return $this->githubAccessToken;
+    }
+
+    public function setGithubAccessToken(?string $githubAccessToken): self
+    {
+        $this->githubAccessToken = $githubAccessToken;
 
         return $this;
     }
